@@ -68,18 +68,30 @@ checkWinner(){
 
 
 if(roundWon){
-    statusText.textContent= `${currentPlyer} Wins`;
-    running=false;
+    this.statusText.textContent= `${this.currentPlyer} Wins`;
+    this.running=false;
 
-}else if(!options.includes("")){
-    statusText.textContent= `Draw !!`
+}else if(!this.options.includes("")){
+    this.statusText.textContent= `Draw !!`
 }
 else{
-    changeTurn();
+    this.changeTurn();
 }
 
-}
 
+
+}
+changeTurn(){
+   if(this.currentPlyer=="X"){
+    this.currentPlyer="O";
+   }else{
+    this.currentPlyer="X";
+   }
+   
+    // this.currentPlyer=(this.currentPlyer=="X")? "O":"X";
+    this.statusText.textContent=`${this.currentPlyer}'s turn`;
+
+}
 
 }
   function init(){
